@@ -16,6 +16,7 @@ This project also demonstrates how to use `pybind11` to wrap C++ APIs for ease o
 
 - CMake (>=3.22)
 - conda (>=24.5.0)
+- make (>=3.81)
 
 ### Building the Project
 
