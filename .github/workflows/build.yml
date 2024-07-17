@@ -23,7 +23,7 @@ jobs:
       run: |
         source "$CONDA/etc/profile.d/conda.sh"
         conda remove -n word_advisor_lib_env_01 --all -y
-        conda env --file environment.yml
+        conda env create --file environment.yml
     - name: Build and Test
       run: |
         source "$CONDA/etc/profile.d/conda.sh"
