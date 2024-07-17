@@ -1,3 +1,5 @@
+![CI](https://github.com/H-Shen/WordAdvisorLib/workflows/WordAdvisorLib_Build_And_Test/badge.svg)
+
 ## WordAdvisor
 
 WordAdvisorLib is a C++ library that provides functionality to find the closest word match for a given input word using 
