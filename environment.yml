@@ -1,0 +1,8 @@
+name: word_advisor_lib_env_01
+channels:
+  - anaconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11.2
+  - nltk
