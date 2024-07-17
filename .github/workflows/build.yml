@@ -1,4 +1,4 @@
-name: CMake
+name: WordAdvisorLib_Build_And_Test
 
 on: [push]
 
