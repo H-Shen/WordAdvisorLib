@@ -8,21 +8,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Set up Miniconda
-      uses: conda-incubator/setup-miniconda@v2
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v3
       with:
-        python-version: 3.11
-        environment-file: environment.yml
-        auto-activate-base: false
-
+        python-version: '3.11'
+    - name: Add conda to system path
+      run: |
+        # Initialize conda for bash shell
+        echo "$CONDA/bin" >> $GITHUB_PATH
+        source "$CONDA/etc/profile.d/conda.sh"
+        conda init bash
+    - name: Install dependencies
+      run: |
+        source "$CONDA/etc/profile.d/conda.sh"
+        conda remove -n word_advisor_lib_env_01 --all -y
+        conda env --file environment.yml
     - name: Build and Test
       run: |
+        source "$CONDA/etc/profile.d/conda.sh"
+        conda activate word_advisor_lib_env_01
         mkdir -p build
         cd ./build
-        conda activate word_advisor_lib_env_01
         cmake ..
         make
         ./output
