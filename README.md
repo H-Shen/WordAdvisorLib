@@ -6,7 +6,7 @@ This project also demonstrates how to use `pybind11` to wrap C++ APIs for ease o
 
 ### Features
 
-- Use C++ 17 Standard
+- Use C++ 17 Standard.
 - Calculate the Levenshtein distance between two words.
 - Find the best match for a given word from a dictionary.
 - Multithreaded word matching for improved performance.
